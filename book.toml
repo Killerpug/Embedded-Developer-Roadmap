@@ -1,0 +1,12 @@
+[book]
+authors = ["Killerpug"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Embedded Developer Roadmap"
+
+[preprocessor.plantuml]
+use-data-uris=false
+clickable-img=true
+command = "mdbook-plantuml -l"
+

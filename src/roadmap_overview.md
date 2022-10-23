@@ -23,6 +23,6 @@ class "System Interfaces" as sys_int{
 }
 
 comp_arch --> os
-comp_arch -- sys_int
+comp_arch --> sys_int
 @enduml
 ```

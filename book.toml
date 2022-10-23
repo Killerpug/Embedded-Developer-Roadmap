@@ -6,6 +6,7 @@ src = "src"
 title = "Embedded Developer Roadmap"
 
 [preprocessor.plantuml]
+plantuml-cmd="java -jar plantuml.jar"
 use-data-uris=false
 clickable-img=true
 command = "mdbook-plantuml -l"

@@ -95,11 +95,6 @@ class "topic " as topic {
 }
 
 
-@enduml
-```
-
-```plantuml,format=svg
-@startuml
 
 struct Industries {
 
@@ -108,12 +103,20 @@ struct Industries {
 
 
 struct Automotive {
-
+  + MISRA
+  + CAN
 }
 
 
 
-class "AUTOSAR" as autosar{
+
+class "Gateways" as gateways{
+
+}
+class "Infotaiment" as infotaiment{
+
+}
+class "Driver Asistance" as driver_assistance{
 
 }
 
@@ -149,14 +152,16 @@ struct Communications {
    + RF
 }
 
-
+Core --> Industries
 Industries --> Automotive
 Industries --> Aerospace
 Industries --> Biomedical
 Industries --> Consumer_Electronics
 Industries --> Communications
 Aerospace --> coordinated_systems
-Automotive --> autosar
+Automotive --> gateways
+Automotive --> infotaiment
+Automotive --> driver_assistance
 Biomedical --> medical_devices
 
 @enduml

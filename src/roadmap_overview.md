@@ -1,4 +1,5 @@
-# Chapter 1
+# Roadmap Overview
+
 
 ```plantuml,format=svg
 @startuml
@@ -9,12 +10,21 @@ struct Fundamentals {
 
 }
 
+class "Data structures and Algorithms" as data_algo {
+  + Collections: Linked list, stack, queues, \n
+   hash tables, heaps, binary trees
+  + Interfaces
+  + recursion
+  + Sorting
+  + Graphs
+}
 
 class "Mathematics" as math {
-   + Linear Algebra: Factoring, Quadratic formula, Binomial Theorem, \n
-   Inequalities.
-   + Geometry: Distance formula, circles, lines,
-   + Calculus: limits, functions, derivatives, integrals
+  + Linear Algebra: Factoring, Quadratic formula, Binomial Theorem, \n
+    Inequalities.
+  + Trigonometry.
+  + Geometry: Distance formula, circles, lines,
+  + Calculus: limits, functions, derivatives, integrals
 
 }
 
@@ -31,14 +41,10 @@ class "Control Systems" as control_sys {
 
 }
 
-class "Computer Organization" as computer_org {
-  + Fundamentals
-
-}
 
 class "Computer Architecture" as comp_arch {
-   + Memory Layout()
-   + ISA()
+  + Memory Layout()
+  + ISA()
 }
 
 class "Operating Systems" as os {
@@ -61,18 +67,18 @@ class "Circuits" as circuits {
 }
 
 Fundamentals -u-> circuits
-Fundamentals -r-> os
-Fundamentals -l-> math
-Fundamentals -l-> control_sys
-Fundamentals -r-> digital_sys
-Fundamentals -u-> computer_org
-Fundamentals --> comp_arch
-Fundamentals --> topic
 
-struct Core {
+Fundamentals -l-> math
+Fundamentals -r-> digital_sys
+Fundamentals --> data_algo
+digital_sys -r-> os
+digital_sys --> comp_arch
+math -l-> control_sys
+
+struct "Tracks" as Tracks {
 
 }
-Fundamentals --> Core
+Fundamentals -d-> Tracks
 
 class "Compiler" as compiler {
   + Bootloader()
@@ -84,10 +90,6 @@ class "Hardware emulators" as hw_emulator {
 
 }
 
-
-struct Tracks {
-
-}
 
 class "topic " as topic {
   + Fundamentals
@@ -152,7 +154,7 @@ struct Communications {
    + RF
 }
 
-Core --> Industries
+Tracks -d-> Industries
 Industries --> Automotive
 Industries --> Aerospace
 Industries --> Biomedical
@@ -166,3 +168,7 @@ Biomedical --> medical_devices
 
 @enduml
 ```
+
+What is the recommended usage of this roadmap?
+1. Complete the Fundamentals, this is knowledge that will be the pillar for anything you may end up working on as an Embedded Developer and even most of it applies to other engineering branches.
+2. Select one Track and one Industry that catches your attention and start getting familiarized with the topics inside of both, for example: My goal is to learn about Embedded Software track in the Automotive Industry, If you were to select gateways then you could become proeficient in handling and passing data between two components.

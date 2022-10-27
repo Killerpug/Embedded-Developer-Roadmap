@@ -79,65 +79,42 @@ struct "Tracks" as Tracks {
 }
 
 
-class "Compiler" as compiler {
-  + Bootloader()
-
-}
-
-class "Hardware emulators" as hw_emulator {
-  + Fundamentals : NES emulator
-
-}
-
 
 class "Machine Learning " as machine_learning {
   + Fundamentals
-
 }
-
 
 class "Cybersecurity " as cybersecurity {
   + Fundamentals
-
 }
 
 class "Firmware " as firmware {
   + Fundamentals
-
 }
-
 
 class "Internet Of Things " as iot {
   + Fundamentals
-
 }
-
 
 class "Systems Control" as sys_control {
   + Fundamentals
-
 }
 
 class "Embedded Linux" as embedded_linux {
-  + Fundamentals
-
+  + Device Drivers
 }
-
-
 
 class "Audio" as audio {
   + Fundamentals
-
 }
-
 
 class "Radio Frequency" as radio_frequency {
   + Fundamentals
-
 }
 
 class "Software" as embedded_software {
-  + Fundamentals
+  + HW emulators
+  + RTOS
 }
 
 class "Tester" as tester {
@@ -167,52 +144,64 @@ struct Automotive {
   + CAN
 }
 
-
-
-
 class "Gateways" as gateways{
 
 }
+
 class "Infotaiment" as infotaiment{
 
 }
+
 class "Driver Asistance" as driver_assistance{
 
 }
+
+
 
 struct Aerospace {
    
 }
 
-
-
-class "Coordinated Systems" as coordinated_systems{
+class "Drive by Wire" as drive_by_wire{
 
 }
+
+class "Flight Recorder" as flight_recorder{
+
+}
+
+
 
 struct Biomedical {
    
 }
 
-
-
-class "Medical grade devices" as medical_devices {
-   + X-ray imaging
-   + Wearable tech
-   + QNX() : create a medical grade device with real time constraints.
+class "Imaging" as imaging {
+   + X-ray
+   + 3D models
+   + QNX()
 }
 
+class "smart prosthetics" as smart_prost {
+  + brain-controlled
+  + exoskeletons
+  + nerv-controlled
+}
+
+class "medical instrumentation" as medical_instrumentation {
+  + measurement: blood pressure, hearth rate, /n
+   oxidometer, spirometers.
+}
 
 
 struct "Consumer Electronics" as Consumer_Electronics {
    + Home appliances
 }
 
-struct Communications {
-   + RF
+class "wireless communications" as wireless_comms{
+   + RF: 4G, 5G, LTE
+   + wifi
 }
-
-
 
 /' *********************************** Finish Tracks ******************************** '/
 
@@ -244,12 +233,17 @@ Industry_applications --> Automotive
 Industry_applications --> Aerospace
 Industry_applications --> Biomedical
 Industry_applications --> Consumer_Electronics
-Industry_applications --> Communications
-Aerospace --> coordinated_systems
+Aerospace --> drive_by_wire
+Aerospace --> flight_recorder
+Aerospace --> wireless_comms
+Automotive --> drive_by_wire
 Automotive --> gateways
 Automotive --> infotaiment
 Automotive --> driver_assistance
-Biomedical --> medical_devices
+Automotive --> wireless_comms
+Biomedical --> imaging
+Biomedical --> smart_prost
+Biomedical --> medical_instrumentation
 
 
 

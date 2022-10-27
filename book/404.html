@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="roadmap_overview.html"><strong aria-hidden="true">1.</strong> Roadmap Overview</a></li><li class="chapter-item expanded "><a href="operating_systems.html"><strong aria-hidden="true">2.</strong> Operating Systems</a></li><li class="chapter-item expanded "><a href="digital_systems.html"><strong aria-hidden="true">3.</strong> Digital Systems</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="roadmap_overview.html">Roadmap Overview</a></li><li class="chapter-item expanded "><a href="Fundamentals.html"><strong aria-hidden="true">1.</strong> Fundamentals</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Fundamentals/operating_systems.html"><strong aria-hidden="true">1.1.</strong> Operating Systems</a></li><li class="chapter-item expanded "><a href="Fundamentals/digital_systems.html"><strong aria-hidden="true">1.2.</strong> Digital Systems</a></li></ol></li><li class="chapter-item expanded "><a href="Tracks.html"><strong aria-hidden="true">2.</strong> Tracks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Tracks/embedded_software.html"><strong aria-hidden="true">2.1.</strong> Embedded software</a></li></ol></li><li class="chapter-item expanded "><a href="Industry_Applications.html"><strong aria-hidden="true">3.</strong> Industry Applications</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Industry/Aerospace.html"><strong aria-hidden="true">3.1.</strong> Aerospace</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Industry/drive_by_wire.html"><strong aria-hidden="true">3.1.1.</strong> Drive by Wire</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -163,6 +163,22 @@
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 

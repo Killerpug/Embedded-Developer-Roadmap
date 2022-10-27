@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="roadmap_overview.html"><strong aria-hidden="true">1.</strong> Roadmap Overview</a></li><li class="chapter-item expanded "><a href="operating_systems.html"><strong aria-hidden="true">2.</strong> Operating Systems</a></li><li class="chapter-item expanded "><a href="digital_systems.html"><strong aria-hidden="true">3.</strong> Digital Systems</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="roadmap_overview.html">Roadmap Overview</a></li><li class="chapter-item expanded "><a href="Fundamentals.html"><strong aria-hidden="true">1.</strong> Fundamentals</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Fundamentals/operating_systems.html"><strong aria-hidden="true">1.1.</strong> Operating Systems</a></li><li class="chapter-item expanded "><a href="Fundamentals/digital_systems.html"><strong aria-hidden="true">1.2.</strong> Digital Systems</a></li></ol></li><li class="chapter-item expanded "><a href="Tracks.html"><strong aria-hidden="true">2.</strong> Tracks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Tracks/embedded_software.html"><strong aria-hidden="true">2.1.</strong> Embedded software</a></li></ol></li><li class="chapter-item expanded "><a href="Industry_Applications.html"><strong aria-hidden="true">3.</strong> Industry Applications</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Industry/Aerospace.html"><strong aria-hidden="true">3.1.</strong> Aerospace</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Industry/drive_by_wire.html"><strong aria-hidden="true">3.1.1.</strong> Drive by Wire</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -150,17 +150,23 @@
 <li>Complete the Fundamentals, this is knowledge that will be the pillar for anything you may end up working on as an Embedded Developer and even most of it applies to other engineering branches.</li>
 <li>Select one Track and one Industry that catches your attention and start getting familiarized with the topics inside of both, for example: My goal is to learn about Embedded Software track in the Automotive Industry, If you were to select gateways then you could become proeficient in handling and passing data between two components.</li>
 </ol>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="operating-systems"><a class="header" href="#operating-systems">Operating Systems</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="operating-systems"><a class="header" href="#operating-systems">Operating Systems</a></h1>
 <p>The OS is a program that manages a computers resources by offering services(cpu time, memory space via file storage, IO operations). </p>
 <ul>
 <li>Process and threads</li>
 <li>OS interfaces</li>
 <li>Memory management</li>
 </ul>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Resource</th><th style="text-align: center">Description</th><th style="text-align: center">Recomendation</th></tr></thead><tbody>
+<tr><td style="text-align: center"><a href="https://github.com/prakhar1989/awesome-courses"> Operating Systems</a></td><td style="text-align: center">checkout the OS courses in this repo</td><td style="text-align: center"><span class="likebtn-wrapper" data-theme="google" data-counter_frmt="comma"> span</span></td></tr>
+<tr><td style="text-align: center">resource 2</td><td style="text-align: center">description</td><td style="text-align: center">review</td></tr>
+<tr><td style="text-align: center">resource 3</td><td style="text-align: center">description</td><td style="text-align: center">review</td></tr>
+</tbody></table>
+</div><script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js"); </script>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="digital-systems"><a class="header" href="#digital-systems">Digital Systems</a></h1>
 <p>https://austinmorlan.com/posts/8bit_breadboard_fpga/    -&gt; build an 8-bit CPU
 https://www.youtube.com/playlist?list=PLowKtXNTBypGqImE405J2565dvjafglHU -&gt; Ben eater 8-bit breadboard computer</p>
-
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
@@ -178,6 +184,22 @@ https://www.youtube.com/playlist?list=PLowKtXNTBypGqImE405J2565dvjafglHU -&gt; B
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 

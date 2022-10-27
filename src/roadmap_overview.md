@@ -3,9 +3,10 @@
 
 ```plantuml,format=svg
 @startuml
-'skinparam linetype polyline
-skinparam linetype ortho
+skinparam linetype polyline
+'skinparam linetype ortho
 
+/' ******************************* Start Fundamentals ****************************** '/
 struct Fundamentals {
 
 }
@@ -36,7 +37,7 @@ class "Digital Systems" as digital_sys {
 
 }
 
-class "Control Systems" as control_sys {
+class "Control Engineering" as control_eng {
   + Fundamentals
 
 }
@@ -66,19 +67,17 @@ class "Circuits" as circuits {
    + Sound system() : filters and amplifiers, power sypply.
 }
 
-Fundamentals -u-> circuits
 
-Fundamentals -l-> math
-Fundamentals -r-> digital_sys
-Fundamentals --> data_algo
-digital_sys -r-> os
-digital_sys --> comp_arch
-math -l-> control_sys
+
+/' ******************************* Finish Fundamentals ******************************'/
+
+
+/' *********************************** Start Tracks ********************************'/
 
 struct "Tracks" as Tracks {
 
 }
-Fundamentals -d-> Tracks
+
 
 class "Compiler" as compiler {
   + Bootloader()
@@ -91,16 +90,75 @@ class "Hardware emulators" as hw_emulator {
 }
 
 
-class "topic " as topic {
+class "Machine Learning " as machine_learning {
+  + Fundamentals
+
+}
+
+
+class "Cybersecurity " as cybersecurity {
+  + Fundamentals
+
+}
+
+class "Firmware " as firmware {
+  + Fundamentals
+
+}
+
+
+class "Internet Of Things " as iot {
+  + Fundamentals
+
+}
+
+
+class "Systems Control" as sys_control {
+  + Fundamentals
+
+}
+
+class "Embedded Linux" as embedded_linux {
   + Fundamentals
 
 }
 
 
 
-struct Industries {
+class "Audio" as audio {
+  + Fundamentals
 
 }
+
+
+class "Radio Frequency" as radio_frequency {
+  + Fundamentals
+
+}
+
+class "Software" as embedded_software {
+  + Fundamentals
+}
+
+class "Tester" as tester {
+  + Fundamentals
+}
+
+class "Validation" as validation {
+  + Fundamentals
+}
+
+
+
+/' *********************************** Finish Tracks ********************************'/
+
+
+/' *********************************** Start Industry_applications ********************************'/
+
+struct "Industry applications" as Industry_applications{
+
+}
+
 
 
 
@@ -154,17 +212,47 @@ struct Communications {
    + RF
 }
 
-Tracks -d-> Industries
-Industries --> Automotive
-Industries --> Aerospace
-Industries --> Biomedical
-Industries --> Consumer_Electronics
-Industries --> Communications
+
+
+/' *********************************** Finish Tracks ******************************** '/
+
+Fundamentals -u-> circuits
+Fundamentals -l-> math
+Fundamentals -r-> digital_sys
+Fundamentals -r-> data_algo
+digital_sys -r-> os
+digital_sys --> comp_arch
+math -l-> control_eng
+
+Fundamentals --d-> Tracks
+
+Tracks -l-> audio
+Tracks -l-> cybersecurity
+Tracks -l-> embedded_linux
+Tracks -l-> embedded_software
+Tracks -l-> firmware
+Tracks -r-> iot
+Tracks -r-> machine_learning
+Tracks -r-> radio_frequency
+Tracks -r-> sys_control
+Tracks -r-> tester
+Tracks -r-> validation
+
+Tracks --d-> Industry_applications
+
+Industry_applications --> Automotive
+Industry_applications --> Aerospace
+Industry_applications --> Biomedical
+Industry_applications --> Consumer_Electronics
+Industry_applications --> Communications
 Aerospace --> coordinated_systems
 Automotive --> gateways
 Automotive --> infotaiment
 Automotive --> driver_assistance
 Biomedical --> medical_devices
+
+
+
 
 @enduml
 ```

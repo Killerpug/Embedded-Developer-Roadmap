@@ -81,23 +81,32 @@ struct "Tracks" as Tracks {
 
 
 class "Machine Learning " as machine_learning {
-  + Fundamentals
+  + Neural networks
+  + Natural langage processing
+  + Statistical models
+  + Supervised, unsupervised, reinforced learning
 }
 
 class "Cybersecurity " as cybersecurity {
-  + Fundamentals
+  + Risk management
+  + cryptography
+  + Defensive/offensive
 }
 
 class "Firmware " as firmware {
-  + Fundamentals
+  + hardware-software coupling
+  + baremetal programming
 }
 
 class "Internet Of Things " as iot {
-  + Fundamentals
+  + Networking
+  + Cloud base technologies
 }
 
 class "Systems Control" as sys_control {
-  + Fundamentals
+  + Controllers: Fuzzy, PID, state space
+  + Systems Modeling
+  + Matlab/Octave()
 }
 
 class "Embedded Linux" as embedded_linux {
@@ -105,25 +114,26 @@ class "Embedded Linux" as embedded_linux {
 }
 
 class "Audio" as audio {
-  + Fundamentals
+  + Signal processing
+  + I2S()
 }
 
 class "Radio Frequency" as radio_frequency {
-  + Fundamentals
+  + LoRa communications
 }
 
 class "Software" as embedded_software {
-  + HW emulators
-  + RTOS
+  + Design patterns
+  + Portability and standarization
+  + HW emulators()
+  + RTOS()
 }
 
 class "Tester" as tester {
-  + Fundamentals
+  + breaking stuff
 }
 
-class "Validation" as validation {
-  + Fundamentals
-}
+
 
 
 
@@ -198,7 +208,7 @@ struct "Consumer Electronics" as Consumer_Electronics {
    + Home appliances
 }
 
-class "wireless communications" as wireless_comms{
+class "telematics" as telematics{
    + RF: 4G, 5G, LTE
    + wifi
 }
@@ -215,17 +225,18 @@ math -l-> control_eng
 
 Fundamentals --d-> Tracks
 
-Tracks -l-> audio
+
 Tracks -l-> cybersecurity
 Tracks -l-> embedded_linux
 Tracks -l-> embedded_software
 Tracks -l-> firmware
-Tracks -r-> iot
 Tracks -r-> machine_learning
-Tracks -r-> radio_frequency
 Tracks -r-> sys_control
 Tracks -r-> tester
-Tracks -r-> validation
+Tracks -r-> audio
+embedded_software --> iot
+embedded_software --> radio_frequency
+firmware --> radio_frequency
 
 Tracks --d-> Industry_applications
 
@@ -235,12 +246,12 @@ Industry_applications --> Biomedical
 Industry_applications --> Consumer_Electronics
 Aerospace --> drive_by_wire
 Aerospace --> flight_recorder
-Aerospace --> wireless_comms
+Aerospace --> telematics
 Automotive --> drive_by_wire
 Automotive --> gateways
 Automotive --> infotaiment
 Automotive --> driver_assistance
-Automotive --> wireless_comms
+Automotive --> telematics
 Biomedical --> imaging
 Biomedical --> smart_prost
 Biomedical --> medical_instrumentation
